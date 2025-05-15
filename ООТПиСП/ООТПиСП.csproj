@@ -49,6 +49,8 @@
     <Compile Include="Atmo.cs" />
     <Compile Include="DieselEngine.cs" />
     <Compile Include="Engine.cs" />
+    <Compile Include="EngineFactory.cs" />
+    <Compile Include="EngineSerializationBinder.cs" />
     <Compile Include="Engine_1Z.cs" />
     <Compile Include="Engine_AFN.cs" />
     <Compile Include="Engine_AAA.cs" />

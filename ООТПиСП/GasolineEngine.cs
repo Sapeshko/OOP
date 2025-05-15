@@ -6,18 +6,23 @@ using System.Threading.Tasks;
 
 namespace ООТПиСП
 {
+    [Serializable]
     public class GasolineEngine : Engine
     {
         public string FuelType { get; set; } = "Бензин";
+
+        public GasolineEngine() { }
 
         public GasolineEngine(string model, double displacement, int power, int torque, string imagePath)
             : base(model, displacement, power, torque, imagePath)
         {
         }
 
-        public override string GetInfo()
+        public override string ToString()
         {
-            return base.GetInfo() + $"Тип топлива: {FuelType}\n";
+            return base.ToString() + $"Тип топлива: {FuelType}\n";
         }
     }
 }
+
+

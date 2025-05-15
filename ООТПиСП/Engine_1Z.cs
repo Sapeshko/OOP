@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ООТПиСП
 {
+    [Serializable]
     public class Engine_1Z : Turbo
     {
         public Engine_1Z()

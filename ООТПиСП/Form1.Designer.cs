@@ -51,6 +51,12 @@
             this.buttonYes2 = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.buttonImage = new System.Windows.Forms.Button();
+            this.buttonUndo = new System.Windows.Forms.Button();
+            this.buttonRedo = new System.Windows.Forms.Button();
+            this.buttonSaveXml = new System.Windows.Forms.Button();
+            this.buttonLoadXml = new System.Windows.Forms.Button();
+            this.buttonSaveBin = new System.Windows.Forms.Button();
+            this.buttonLoadBin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEngine)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,6 +142,7 @@
             this.textBoxDisplacement.Size = new System.Drawing.Size(100, 22);
             this.textBoxDisplacement.TabIndex = 8;
             this.textBoxDisplacement.Text = "Объем";
+            this.textBoxDisplacement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDisplacement_KeyPress);
             // 
             // textBoxPower
             // 
@@ -144,6 +151,7 @@
             this.textBoxPower.Size = new System.Drawing.Size(100, 22);
             this.textBoxPower.TabIndex = 9;
             this.textBoxPower.Text = "Мощность";
+            this.textBoxPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPower_KeyPress);
             // 
             // textBoxTorque
             // 
@@ -152,6 +160,7 @@
             this.textBoxTorque.Size = new System.Drawing.Size(100, 22);
             this.textBoxTorque.TabIndex = 10;
             this.textBoxTorque.Text = "Крутящий момент";
+            this.textBoxTorque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTorque_KeyPress);
             // 
             // textBoxImagePath
             // 
@@ -277,11 +286,71 @@
             this.buttonImage.UseVisualStyleBackColor = true;
             this.buttonImage.Click += new System.EventHandler(this.buttonImage_Click);
             // 
+            // buttonUndo
+            // 
+            this.buttonUndo.Location = new System.Drawing.Point(421, 130);
+            this.buttonUndo.Name = "buttonUndo";
+            this.buttonUndo.Size = new System.Drawing.Size(75, 23);
+            this.buttonUndo.TabIndex = 22;
+            this.buttonUndo.Text = "Undo";
+            this.buttonUndo.UseVisualStyleBackColor = true;
+            // 
+            // buttonRedo
+            // 
+            this.buttonRedo.Location = new System.Drawing.Point(421, 159);
+            this.buttonRedo.Name = "buttonRedo";
+            this.buttonRedo.Size = new System.Drawing.Size(75, 23);
+            this.buttonRedo.TabIndex = 23;
+            this.buttonRedo.Text = "Redo";
+            this.buttonRedo.UseVisualStyleBackColor = true;
+            // 
+            // buttonSaveXml
+            // 
+            this.buttonSaveXml.Location = new System.Drawing.Point(121, 4);
+            this.buttonSaveXml.Name = "buttonSaveXml";
+            this.buttonSaveXml.Size = new System.Drawing.Size(90, 27);
+            this.buttonSaveXml.TabIndex = 24;
+            this.buttonSaveXml.Text = "СохрXML";
+            this.buttonSaveXml.UseVisualStyleBackColor = true;
+            // 
+            // buttonLoadXml
+            // 
+            this.buttonLoadXml.Location = new System.Drawing.Point(217, 4);
+            this.buttonLoadXml.Name = "buttonLoadXml";
+            this.buttonLoadXml.Size = new System.Drawing.Size(90, 27);
+            this.buttonLoadXml.TabIndex = 25;
+            this.buttonLoadXml.Text = "ОткрXML";
+            this.buttonLoadXml.UseVisualStyleBackColor = true;
+            // 
+            // buttonSaveBin
+            // 
+            this.buttonSaveBin.Location = new System.Drawing.Point(313, 4);
+            this.buttonSaveBin.Name = "buttonSaveBin";
+            this.buttonSaveBin.Size = new System.Drawing.Size(90, 27);
+            this.buttonSaveBin.TabIndex = 26;
+            this.buttonSaveBin.Text = "СохрBIN";
+            this.buttonSaveBin.UseVisualStyleBackColor = true;
+            // 
+            // buttonLoadBin
+            // 
+            this.buttonLoadBin.Location = new System.Drawing.Point(409, 4);
+            this.buttonLoadBin.Name = "buttonLoadBin";
+            this.buttonLoadBin.Size = new System.Drawing.Size(90, 27);
+            this.buttonLoadBin.TabIndex = 27;
+            this.buttonLoadBin.Text = "ОткрBIN";
+            this.buttonLoadBin.UseVisualStyleBackColor = true;
+            // 
             // VagEngines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 514);
+            this.Controls.Add(this.buttonLoadBin);
+            this.Controls.Add(this.buttonSaveBin);
+            this.Controls.Add(this.buttonLoadXml);
+            this.Controls.Add(this.buttonSaveXml);
+            this.Controls.Add(this.buttonRedo);
+            this.Controls.Add(this.buttonUndo);
             this.Controls.Add(this.buttonImage);
             this.Controls.Add(this.buttonYes2);
             this.Controls.Add(this.buttonNo);
@@ -304,8 +373,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBoxInfo);
             this.Controls.Add(this.listBoxEngines);
+            this.KeyPreview = true;
             this.Name = "VagEngines";
             this.Text = "VagEngines";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VagEngines_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEngine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -337,6 +408,12 @@
         private System.Windows.Forms.Button buttonYes2;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Button buttonImage;
+        private System.Windows.Forms.Button buttonUndo;
+        private System.Windows.Forms.Button buttonRedo;
+        private System.Windows.Forms.Button buttonSaveXml;
+        private System.Windows.Forms.Button buttonLoadXml;
+        private System.Windows.Forms.Button buttonSaveBin;
+        private System.Windows.Forms.Button buttonLoadBin;
     }
 }
 

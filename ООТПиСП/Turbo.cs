@@ -7,19 +7,23 @@ using System.Windows.Forms.VisualStyles;
 
 namespace ООТПиСП
 {
+
+    [Serializable]
     public class Turbo : DieselEngine
     {
 
         public string ISTurbo { get; set; } = "Турбонаддув";
+
+        public Turbo() { }
 
         public Turbo(string model, double displacement, int power, int torque, string imagePath)
             : base(model, displacement, power, torque, imagePath)
         {
         }
 
-        public override string GetInfo()
+        public override string ToString()
         {
-            return base.GetInfo() + $"Тип наддува: {ISTurbo}\n";
+            return base.ToString() + $"Тип наддува: {ISTurbo}\n";
         }
 
     }
